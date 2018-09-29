@@ -37,7 +37,7 @@ endif
 "  Highlight class member.
 " -----------------------------------------------------------------------------
 if exists('g:cpp_mNamed_variable_highlight') && g:cpp_mNamed_variable_highlight
-    syn match   Type "\(\(this->\)\|\s\|(\|!\)\@<=m[A-Z]\w*"
+    syn match   Type "\(\(this->\)\|\s\|[(!=]\)\@<=m[A-Z]\w*"
     syn match   Type "^m[A-Z]\w*" 
 endif
 
