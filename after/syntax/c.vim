@@ -28,11 +28,19 @@ endif
 "  Highlight member variable names.
 " -----------------------------------------------------------------------------
 if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
-    syn match   cCustomDot    "\." contained
-    syn match   cCustomPtr    "->" contained
-    syn match   cCustomMemVar "\(\.\|->\)\h\w*" contains=cCustomDot,cCustomPtr
+    "syn match   cCustomMemVar "\(\.\| \(\(this\)->\@!\)\)\zs\h\w*"
+    syn match   cCustomMemVar "\(\.\|->\)\zs\h\w*"
     hi def link cCustomMemVar Function
 endif
+
+" -----------------------------------------------------------------------------
+"  Highlight class member.
+" -----------------------------------------------------------------------------
+if exists('g:cpp_mNamed_variable_highlight') && g:cpp_mNamed_variable_highlight
+    syn match   Type "\(\(this->\)\|\(\s\)\)\@<=m[A-Z]\w*"
+    syn match   Type "^m[A-Z]\w*" 
+endif
+
 
 " -----------------------------------------------------------------------------
 "  Source: aftersyntaxc.vim

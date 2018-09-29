@@ -23,6 +23,11 @@ Highlighting of member variables is disabled by default. To enable set
 let g:cpp_member_variable_highlight = 1
 ```
 
+Highlighting of member variables (which is named like mXxxx or this->mXxxx) is disabled by default. To enable set
+```vim
+let g:cpp_mNamed_variable_highlight = 1
+```
+
 Highlighting of class names in declarations is disabled by default. To enable set
 ```vim
 let g:cpp_class_decl_highlight = 1
